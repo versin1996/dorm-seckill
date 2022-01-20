@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="../image/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="../css/weui.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/login.js"></script>
+    <title>Login</title>
+</head>
+<body>
+<div class="weui-form">
+    <div class="weui-form__text-area">
+        <h2 class="weui-form__title">登录</h2>
+        <div class="weui-form__desc"> </div>
+    </div>
+    <label for="username" class="weui-cell weui-cell_active weui-cell_readonly">
+        <div class="weui-cell__hd"><span class="weui-label">用户名</span></div>
+        <div class="weui-cell__bd">
+            <input id="username" class="weui-input" value="" placeholder="请输入用户名" />
+        </div>
+    </label>
+    <label for="password" class="weui-cell weui-cell_active weui-cell_readonly">
+        <div class="weui-cell__hd"><span class="weui-label">密码</span></div>
+        <div class="weui-cell__bd">
+            <input id="password" type="password" class="weui-input" value="" placeholder="请输入密码" />
+        </div>
+    </label>
+</div>
+
+<div class="weui-bottom-fixed-opr-page" id="js_wrp">
+    <div class="weui-bottom-fixed-opr-page__content">
+        <div class="weui-bottom-fixed-opr" id="js_opr">
+            <a href="javascript:;" role="button" class="weui-btn weui-btn_primary" id="login">登录</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

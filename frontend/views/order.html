@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="../image/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="../css/weui.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/order.js"></script>
+    <title>Order</title>
+</head>
+<body>
+	<div class="weui-form">
+        <div class="weui-form__text-area">
+            <h2 class="weui-form__title">宿舍选择</h2>
+            <div class="weui-form__desc time" style="color: red"></div>
+        </div>
+
+        <div class="weui-cell weui-cell_active weui-cell_select weui-cell_select-after">
+            <div class="weui-cell__hd">
+                <label for="" class="weui-label">楼名</label>
+            </div>
+            <div class="weui-cell__bd">
+                <select class="weui-select building" name="building"></select>
+            </div>
+        </div>
+
+        <label for="cb" class="weui-cell weui-cell_active weui-cell_switch">
+            <div class="weui-cell__bd" id="cb_txt" aria-hidden="true">多人选择</div>
+            <div class="weui-cell__ft">
+                <input aria-labelledby="cb_txt" id="cb" class="weui-switch bind" type="checkbox"/>
+            </div>
+        </label>
+
+        <div class="weui-cells authentication">
+            <label for="auth1" class="weui-cell weui-cell_active">
+                <div class="weui-cell__hd">
+                    <span class="weui-label">认证码1</span>
+                </div>
+                <div class="weui-cell__bd">
+                    <input id="auth1" class="weui-input" placeholder="请输入同住人认证码"/>
+                </div>
+            </label>
+            <label for="auth2" class="weui-cell weui-cell_active">
+                <div class="weui-cell__hd">
+                    <span class="weui-label">认证码2</span>
+                </div>
+                <div class="weui-cell__bd">
+                    <input id="auth2" class="weui-input" placeholder="请输入同住人认证码"/>
+                </div>
+            </label>
+            <label for="auth3" class="weui-cell weui-cell_active">
+                <div class="weui-cell__hd">
+                    <span class="weui-label">认证码3</span>
+                </div>
+                <div class="weui-cell__bd">
+                    <input id="auth3" class="weui-input" placeholder="请输入同住人认证码"/>
+                </div>
+            </label>
+        </div>
+    </div>
+    <div class="weui-form__text-area">
+        <div class="weui-form__desc tips"></div>
+    </div>
+    <div class="weui-bottom-fixed-opr-page" id="js_wrp">
+        <div class="weui-bottom-fixed-opr-page__content">
+            <div class="weui-bottom-fixed-opr" id="js_opr">
+                <a href="javascript:;" role="button" class="weui-btn weui-btn_primary" id="submit">提交</a>
+                <a href="/" role="button" class="weui-btn weui-btn_default">返回</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

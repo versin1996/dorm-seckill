@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="../image/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="../css/weui.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/homepage.js"></script>
+    <title>Home</title>
+</head>
+<body>
+	<div class="weui-form">
+		<div class="weui-form__text-area">
+            <h2 class="weui-form__title">主页</h2>
+            <div class="weui-form__desc"> </div>
+        </div>
+		<div class="weui-cells__title">个人信息</div>
+		<label for="name" class="weui-cell weui-cell_active weui-cell_readonly">
+		    <div class="weui-cell__hd">
+		    	<span class="weui-label">姓名</span>
+		    </div>
+		    <div class="weui-cell__bd">
+		        <input id="name" class="weui-input" value="" readonly/>
+		    </div>
+		</label>
+		<label for="sex" class="weui-cell weui-cell_active weui-cell_readonly">
+		    <div class="weui-cell__hd">
+		    	<span class="weui-label">性别</span>
+		    </div>
+		    <div class="weui-cell__bd">
+		        <input id="sex" class="weui-input" value="" readonly/>
+		    </div>
+		</label>
+		<label for="stuno" class="weui-cell weui-cell_active weui-cell_readonly">
+		    <div class="weui-cell__hd">
+		    	<span class="weui-label">学号</span>
+		    </div>
+		    <div class="weui-cell__bd">
+		        <input id="stuno" class="weui-input" value="" readonly/>
+		    </div>
+		</label>
+		<label for="auth" class="weui-cell weui-cell_active weui-cell_readonly">
+		    <div class="weui-cell__hd">
+		    	<span class="weui-label">认证码</span>
+		    </div>
+		    <div class="weui-cell__bd">
+		        <input id="authentication" class="weui-input" value="" readonly/>
+		    </div>
+		</label>
+
+		<div class="weui-cells__title">宿舍剩余床位信息</div>
+		<div class="dorm-info"></div>
+
+		<div class="weui-bottom-fixed-opr-page" id="js_wrp">
+		    <div class="weui-bottom-fixed-opr-page__content">
+				<div class="weui-bottom-fixed-opr" id="js_opr">
+					<a href="/order" role="button" class="weui-btn weui-btn_primary" id="order">选择宿舍</a>
+					<a href="/result" role="button" class="weui-btn weui-btn_primary" id="orderDetail">查询结果</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

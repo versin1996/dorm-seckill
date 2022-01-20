@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link href="../image/favicon.ico" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="../css/weui.css">
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/orderDetail.js"></script>
+    <title>OrderDetail</title>
+</head>
+<body>
+<div class="weui-form">    
+    <div class="weui-form__text-area">
+        <h2 class="weui-form__title">宿舍结果</h2>
+        <div class="weui-form__desc" id="desc"></div>
+    </div>
+    <div class="weui-form info">  
+        <label for="building" class="weui-cell weui-cell_active weui-cell_readonly">
+            <div class="weui-cell__hd">
+                <span class="weui-label">楼名称</span>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="building" class="weui-input" value="" readonly/>
+            </div>
+        </label>
+        <label for="unit" class="weui-cell weui-cell_active weui-cell_readonly">
+            <div class="weui-cell__hd">
+                <span class="weui-label">单元名</span>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="unit" class="weui-input" value="" readonly/>
+            </div>
+        </label>
+        <label for="dorm" class="weui-cell weui-cell_active weui-cell_readonly">
+            <div class="weui-cell__hd">
+                <span class="weui-label">宿舍号</span>
+            </div>
+            <div class="weui-cell__bd">
+                <input id="dorm" class="weui-input" value="" readonly/>
+            </div>
+        </label>
+    </div>
+    <div class="weui-bottom-fixed-opr-page" id="js_wrp">
+        <div class="weui-bottom-fixed-opr-page__content">
+            <div class="weui-bottom-fixed-opr" id="js_opr">
+                <a href="/order" role="button" class="weui-btn weui-btn_primary order_btn" id="choose">这就去选</a>
+                <a href="/" role="button" class="weui-btn weui-btn_primary order_btn" id="live">这就入住</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

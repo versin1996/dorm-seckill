@@ -1,0 +1,90 @@
+version: "3"
+services:
+
+  webdb:
+    build: src/webdb/
+    image: webdb:v1
+    container_name: webdb
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - $PWD/src/webdb/mysql:/etc/mysql
+
+  login:
+    build: src/login/
+    image: login:v1
+    container_name: login
+    depends_on:
+      - webdb
+      - my_redis
+    volumes:
+      - $PWD/src/login:/code
+
+  dorm:
+    build: src/dorm/
+    image: dorm:v1
+    container_name: dorm
+    environment:
+      PYTHONUNBUFFERED: 1
+    depends_on:
+      - webdb
+      - my_redis
+    volumes:
+      - $PWD/src/dorm:/code
+      - $PWD/settings.conf:/code/settings.conf
+
+  token:
+    build: src/token/
+    image: token:v1
+    container_name: token
+    volumes:
+      - $PWD/src/token:/code
+
+  order:
+    build: src/order/
+    image: order:v1
+    container_name: order
+    environment:
+      PYTHONUNBUFFERED: 1
+    depends_on:
+      - webdb
+      - my_redis
+      - rabbitmq
+      - dorm
+      - node
+    volumes:
+      - $PWD/src/order:/code
+
+  node:
+    build: frontend/
+    image: node:v1
+    container_name: node
+    ports:
+      - "80:8000"
+    depends_on:
+      - webdb
+      - my_redis
+      - rabbitmq
+      - dorm
+    volumes:
+      - $PWD/frontend/index.js:/code/index.js
+      - $PWD/frontend/static:/code/static
+      - $PWD/frontend/views:/code/views
+
+  my_redis:
+    build: src/redis/
+    image: my_redis:v1
+    container_name: my_redis
+
+  rabbitmq:
+    build: src/rabbitmq/
+    image: rabbitmq:v1
+    container_name: rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_VHOST: /
+      RABBITMQ_DEFAULT_USER: admin
+      RABBITMQ_DEFAULT_PASS: admin
+    ports:
+      - "15672:15672"
+    volumes:
+      - /home/rabbitmq/data:/data
