@@ -31,7 +31,7 @@ app.get('/', (req, res) => {
 					}
 					else if(infoRes.data.errcode != 0) {
 						console.log('access_token expired!')
-						axios.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=wx1d3765eb45497a18&corpsecret=qQt8qESyiegC6uYEb45JJ5HyflO9Hnl24_fZbnji95c')
+						axios.get('https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=corpid&corpsecret=corpsecret')
 							.then((qywxRes) => {
 								let access_token = qywxRes.data.access_token
 								axios.post('http://dorm:5000/setaccesstoken', querystring.stringify({'accessToken': access_token}))
